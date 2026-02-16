@@ -1,0 +1,3 @@
+# Ignore new TLC state snapshots by default to avoid unbounded growth.
+# Existing tracked snapshots remain versioned.
+states/**

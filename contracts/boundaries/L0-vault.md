@@ -112,7 +112,7 @@ The header MUST be:
 L0 must be enforceable via non-negotiable checks:
 
 - Compile-time offset checks in vault headers (static asserts on offsets/sizes)
-- Protocol header constants defined in `specs/protocol/yai_protocol_ids.h`
+- Protocol header constants defined in `protocol/yai_protocol_ids.h`
 - Kernel startup validation:
   - header signature check
   - version + layout compatibility check
@@ -124,8 +124,8 @@ L0 must be enforceable via non-negotiable checks:
 
 This boundary binds the following files (non-exhaustive):
 
-- `specs/protocol/README.md`
-- `specs/protocol/protocol.h`, `transport.h`, `yai_protocol_ids.h`
+- `protocol/README.md`
+- `protocol/protocol.h`, `transport.h`, `yai_protocol_ids.h`
 - `../kernel/include/yai_vault.h`
 - `engine/include/shared_constants.h`
 - `mind/src/shared/constants.rs`

@@ -2,18 +2,20 @@
 
 ## Scope
 
-This repository is a contract repository. Treat normative artifacts as public API.
+This repository is a specs-only contract source of truth.
+Do not add runtime implementation guidance or operational playbooks here.
 
 ## Pull Request Rules
 
 - Keep changes small and atomic.
 - Use descriptive commits.
 - Update `REGISTRY.md` when adding/removing normative artifacts.
-- Update `CHANGELOG.md` for meaningful contract-facing changes.
+- Update `CHANGELOG.md` for contract-facing changes.
+- Update `SPEC_MAP.md` when adding/removing specs or packs.
 
 ## Normative Artifact Policy
 
-Normative artifacts include `*.json` contracts and protocol/ABI headers.
+Normative artifacts include JSON contracts, policy packs, and protocol/ABI headers.
 Any normative change must:
 - include explicit versioning intent (`MAJOR`, `MINOR`, or `PATCH` rationale)
 - preserve compatibility guarantees or clearly declare breakage
@@ -22,4 +24,4 @@ Any normative change must:
 ## Naming
 
 Use canonical names only (no internal nicknames or marketing labels).
-Prefer direct terms such as `runbook`, `registry`, `protocol`, `storage`, `vector`.
+Prefer direct terms such as `registry`, `protocol`, `vector`, `policy`, `pack`.

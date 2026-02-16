@@ -12,6 +12,11 @@ Security issues in scope include:
 - authorization/role gating bypasses in contract definitions
 - ambiguity that can cause unsafe consumer behavior
 
+## Threat Model Notes
+
+Spec tampering is meaningless unless a consumer accepts an untrusted or unsigned bundle.
+Consumers MUST pin and verify specs before use.
+
 ## Repository Hygiene
 
 - Never commit secrets, tokens, credentials, or private keys.

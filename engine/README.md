@@ -1,15 +1,27 @@
 # Engine
 
-## Purpose
+## What It Is
 
-Defines engine-facing contract surfaces used by runtime consumers.
+Normative engine contract surface for YAI runtime integration.
 
-## Normative artifacts
+## Normative Artifacts
 
 - `engine_cortex.v1.json`
 
-## References
+## Versioning Rules
 
-- `../REGISTRY.md`
-- `../VERSIONING.md`
-- `../COMPATIBILITY.md`
+- File names encode the major version (`v1`).
+- Any breaking change requires a new major file and a repo `MAJOR` bump.
+- Additive changes require `MINOR` bump and `CHANGELOG.md` entry.
+
+## Consumers
+
+- `yai-core`
+- `yai-cli`
+- `yai-yx`
+
+## Change Procedure
+
+- Update the JSON contracts.
+- Update `REGISTRY.md`, `SPEC_MAP.md`, and `CHANGELOG.md`.
+- Update vectors/tests if behavior changes.
