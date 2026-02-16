@@ -1,5 +1,4 @@
 # Spec Map Pointer
 
-Moved: see `SPEC_MAP.md`.
-
-Reference: `SPEC_MAP.md`
+This repository is canonical.
+See `SPEC_MAP.md` for the authoritative index.

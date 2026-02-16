@@ -1,16 +1,28 @@
 # CLI
 
-## Purpose
+## What It Is
 
-Defines CLI command contracts and schema used by CLI/runtime integrations.
+Normative command and schema contracts for the YAI CLI surface.
 
-## Normative artifacts
+## Normative Artifacts
 
 - `commands.v1.json`
 - `commands.schema.json`
 
-## References
+## Versioning Rules
 
-- `../REGISTRY.md`
-- `../VERSIONING.md`
-- `../COMPATIBILITY.md`
+- File names encode the major version (`v1`).
+- Any breaking change requires a new major file and a repo `MAJOR` bump.
+- Additive changes require `MINOR` bump and `CHANGELOG.md` entry.
+
+## Consumers
+
+- `yai-core`
+- `yai-cli`
+- `yai-yx`
+
+## Change Procedure
+
+- Update the JSON contracts.
+- Update `REGISTRY.md`, `SPEC_MAP.md`, and `CHANGELOG.md`.
+- Update vectors/tests if behavior changes.

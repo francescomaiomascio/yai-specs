@@ -89,7 +89,7 @@ Transport:
 - Framing: NDJSON / JSON-Lines (one JSON object per line)
 
 Envelope:
-- RPC wire format is defined by `RPC v1` (see `docs/specs/RPC_V1.md`)
+- RPC wire format is defined by `protocol/transport.h` and `protocol/protocol.h`
 - `ws_id` MUST be present on all runtime-bound requests
 - Session handshake is required when running in session mode (`protocol_handshake`)
 
@@ -144,7 +144,7 @@ Responses (editorial index; canonical list is in `control_plane.v1.json`):
 
 - All runtime-bound requests MUST carry `ws_id` and MUST be rejected on mismatch.
 - Privileged requests MUST be gated (`arming=true` + `role=operator`) and audited.
-- Events MUST be schema-versioned (see `docs/specs/EVENTS_V1.md` + law registry).
+- Events MUST be schema-versioned and tracked in `control/control_plane.v1.json` and `REGISTRY.md`.
 - The control plane must remain enforceable without UI (CLI-first verifiable behavior).
 
 ---

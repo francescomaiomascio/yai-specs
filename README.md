@@ -1,43 +1,47 @@
 # YAI Specs
 
-`yai-specs` is the canonical contract repository for YAI.
-It defines the shared protocol and data contracts consumed by runtime components.
-The repository is designed to be pinned and consumed across multiple codebases.
-It is intentionally stable, explicit, and versioned.
-It is the source of truth for cross-repo compatibility.
+`yai-specs` is the canonical, normative contract repository for YAI.
+It is the single source of truth for protocols, schemas, policy specs, and formal law.
+Consumers MUST pin a specific revision when integrating these specs.
 
 ## Normative vs Informative
 
-Normative artifacts:
+Normative artifacts define contracts and are binding:
 - JSON contracts (`*.json`)
-- C headers that define protocol/ABI (`protocol/*.h`, `vault/yai_vault_abi.h`)
+- Protocol/ABI headers (`protocol/*.h`, `vault/yai_vault_abi.h`)
+- Formal law artifacts (`contracts/**`)
+- Compliance policy specs and packs (`compliance/**`)
 
-Informative artifacts:
-- Markdown documentation (`*.md`), runbooks, and explanatory notes
+Informative artifacts explain or guide:
+- Markdown documentation (`*.md`)
+- Runbooks or explanatory notes
 
 If there is a conflict, normative artifacts take precedence.
 
+## Repository Structure
+
+- `compliance/` - machine-readable policy specs and packs
+- `contracts/` - normative law, axioms, invariants, boundaries, formal proofs
+- `protocol/` - wire/ABI headers and protocol IDs
+- `control/` - control-plane schemas
+- `cli/` - CLI command schemas
+- `engine/` - engine contract surface
+- `graph/` - graph schema
+- `providers/` - provider-facing schema
+- `vault/` - vault ABI contract
+- `vectors/` - test vectors for conformance
+
+## Canonical Indexes
+
+- `SPEC_MAP.md` - authoritative table of contents for all specs
+- `REGISTRY.md` - normative artifact registry and ID allocation rules
+- `VERSIONING.md` - versioning and compatibility policy
+- `COMPATIBILITY.md` - consumer compatibility matrix
+- `CHANGELOG.md` - contract change log
+- `SECURITY.md` - security and disclosure policy
+
 ## Consumption Model
 
-Consumers should use this repository as a pinned dependency (submodule or snapshot).
-Pinning must be explicit and tied to a known specs revision.
-Upgrades should be deliberate and validated against compatibility rules.
-
-## Repository Sections
-
-- `protocol/` - transport envelope, IDs, auth, errors, runtime protocol headers
-- `vault/` - vault ABI contract and header
-- `control/` - control plane schema and authority model
-- `cli/` - CLI command contracts and schema
-- `engine/` - engine contract surface
-- `graph/` - graph contract schema
-- `providers/` - provider-facing contract schema
-- `compliance/` - compliance context and retention policy contracts
-- `vectors/` - conformance and protocol test vectors
-
-## Indexes
-
-- `REGISTRY.md` - canonical registry of normative artifacts
-- `VERSIONING.md` - semantic versioning and breakage policy
-- `COMPATIBILITY.md` - consumer compatibility rules
-- `CHANGELOG.md` - documented contract changes
+- Treat this repo as a pinned dependency (submodule or snapshot).
+- Upgrades are deliberate and validated against `VERSIONING.md` and `COMPATIBILITY.md`.
+- Do not copy specs into downstream repos; link and pin instead.

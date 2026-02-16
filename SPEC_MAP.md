@@ -1,80 +1,72 @@
-# Spec Map
+# SPEC_MAP
 
-Mappa canonica delle specs e del loro stato nel repository `yai-specs`.
-
-## Protocol
-
-- Version: `v1` (where tagged)
-- Status: stable
-- Links:
-  - `protocol/protocol.h`
-  - `protocol/transport.h`
-  - `protocol/yai_protocol_ids.h`
-  - `protocol/errors.h`
-  - `protocol/auth.h`
-  - `protocol/roles.h`
-  - `protocol/session.h`
-  - `protocol/audit.h`
-  - `protocol/runtime/rpc_runtime.h`
-
-## Control
-
-- Version: `v1` (`control_plane`)
-- Status: stable
-- Links:
-  - `control/control_plane.v1.json`
-  - `control/authority.json`
-
-## CLI
-
-- Version: `v1` (`commands`)
-- Status: stable
-- Links:
-  - `cli/commands.v1.json`
-  - `cli/commands.schema.json`
-
-## Vault
-
-- Version: ABI current (`v1` schema)
-- Status: stable
-- Links:
-  - `vault/vault_abi.json`
-  - `vault/yai_vault_abi.h`
-
-## Graph
-
-- Version: `v1`
-- Status: stable
-- Links:
-  - `graph/graph.v1.json`
-
-## Providers
-
-- Version: `v1`
-- Status: stable
-- Links:
-  - `providers/providers.v1.json`
+Canonical index of all normative artifacts in `yai-specs`.
+This file is the single source of truth for navigation.
 
 ## Compliance
 
-- Version: `v1` (context/policy)
-- Status: draft
-- Links:
-  - `compliance/compliance.context.v1.json`
-  - `compliance/retention.policy.v1.json`
+Policy specs:
+- `compliance/compliance.context.v1.json`
+- `compliance/retention.policy.v1.json`
+
+Policy packs:
+- `compliance/packs/gdpr-eu/2026Q1/pack.meta.json`
+- `compliance/packs/gdpr-eu/2026Q1/retention.defaults.json`
+- `compliance/packs/gdpr-eu/2026Q1/taxonomy.data_classes.json`
+- `compliance/packs/gdpr-eu/2026Q1/taxonomy.legal_basis.json`
+- `compliance/packs/gdpr-eu/2026Q1/taxonomy.purposes.json`
+
+## Contracts (Normative Law)
+
+- `contracts/axioms/`
+- `contracts/invariants/`
+- `contracts/boundaries/`
+- `contracts/terminology/`
+- `contracts/extensions/`
+- `contracts/extensions/compliance/`
+- `contracts/formal/`
+
+## Protocol
+
+- `protocol/protocol.h`
+- `protocol/transport.h`
+- `protocol/yai_protocol_ids.h`
+- `protocol/errors.h`
+- `protocol/auth.h`
+- `protocol/roles.h`
+- `protocol/session.h`
+- `protocol/audit.h`
+- `protocol/runtime/rpc_runtime.h`
+
+## Control
+
+- `control/control_plane.v1.json`
+- `control/authority.json`
+
+## CLI
+
+- `cli/commands.v1.json`
+- `cli/commands.schema.json`
+
+## Vault
+
+- `vault/vault_abi.json`
+- `vault/yai_vault_abi.h`
+
+## Graph
+
+- `graph/graph.v1.json`
+
+## Providers
+
+- `providers/providers.v1.json`
 
 ## Engine
 
-- Version: `v1` (`engine_cortex`)
-- Status: experimental
-- Links:
-  - `engine/engine_cortex.v1.json`
+- `engine/engine_cortex.v1.json`
 
-## Vectors
+## Vectors (Conformance)
 
-- Version: snapshot set
-- Status: draft
-- Links:
-  - `vectors/transport_vectors.json`
-  - `vectors/auth_vectors.json`
-  - `vectors/audit_vectors.json`
+- `vectors/transport_vectors.json`
+- `vectors/auth_vectors.json`
+- `vectors/audit_vectors.json`

@@ -1,15 +1,27 @@
 # Graph
 
-## Purpose
+## What It Is
 
-Defines graph RPC contract surfaces consumed by runtime graph operations.
+Normative graph schema contracts.
 
-## Normative artifacts
+## Normative Artifacts
 
 - `graph.v1.json`
 
-## References
+## Versioning Rules
 
-- `GRAPH_V1.md`
-- `../REGISTRY.md`
-- `../VERSIONING.md`
+- File names encode the major version (`v1`).
+- Any breaking change requires a new major file and a repo `MAJOR` bump.
+- Additive changes require `MINOR` bump and `CHANGELOG.md` entry.
+
+## Consumers
+
+- `yai-core`
+- `yai-cli`
+- `yai-yx`
+
+## Change Procedure
+
+- Update the JSON contracts.
+- Update `REGISTRY.md`, `SPEC_MAP.md`, and `CHANGELOG.md`.
+- Update vectors/tests if behavior changes.
