@@ -3,7 +3,7 @@
 # yai-specs — Quality Gates
 # ===============================
 
-.PHONY: all check tree docs docs-clean
+.PHONY: all check tree docs docs-clean clean
 
 all: check
 
@@ -15,21 +15,7 @@ check:
 	@test -f protocol/runtime/rpc_runtime.h
 
 	@echo "[specs] validating JSON (if python3 available)..."
-	@command -v python3 >/dev/null 2>&1 && \
-	  python3 - <<'PY' || true
-	import json, glob, sys
-	bad = []
-	for p in glob.glob("**/*.json", recursive=True):
-	    try:
-	        json.load(open(p,"r",encoding="utf-8"))
-	    except Exception as e:
-	        bad.append((p,str(e)))
-	if bad:
-	    print("JSON errors:")
-	    for p,e in bad: print(" -",p,":",e)
-	    sys.exit(1)
-	print("OK")
-	PY
+	@command -v python3 >/dev/null 2>&1 && python3 -c "code='''import json, glob, sys\nbad = []\nfor p in glob.glob(\"**/*.json\", recursive=True):\n    try:\n        json.load(open(p, \"r\", encoding=\"utf-8\"))\n    except Exception as e:\n        bad.append((p, str(e)))\nif bad:\n    print(\"JSON errors:\")\n    for p, e in bad:\n        print(\" -\", p, \":\", e)\n    sys.exit(1)\nprint(\"OK\")\n'''; exec(code)"
 
 tree:
 	@find . -maxdepth 3 -type f | sort
@@ -48,3 +34,5 @@ docs:
 
 docs-clean:
 	@rm -rf $(DOXY_OUT)
+
+clean: docs-clean
