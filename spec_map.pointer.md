@@ -1,6 +1,5 @@
 # Spec Map Pointer
 
-Source of truth for mapping:
-- Law specs -> generated headers/bindings -> runtime consumers
+Moved: see `SPEC_MAP.md`.
 
-See: law/formal/spec_map.md
+Reference: `SPEC_MAP.md`
