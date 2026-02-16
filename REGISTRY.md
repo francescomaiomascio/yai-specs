@@ -1,12 +1,35 @@
-# Specs Registry
+# Registry
 
-This is the authoritative list of runtime contracts.
+Canonical index of normative artifacts in `yai-specs`.
 
-| Domain | Spec / Schema | Implemented by | Consumed by | Notes |
-|---|---|---|---|---|
-| protocol | protocol.h + transport.h + yai_protocol_ids.h | kernel + engine | cli + mind | envelope, handshake |
-| control | control_plane.v1.json | kernel | cli | control plane commands |
-| graph | graph.v1.json | engine(storage_gate) | mind | RPC graph ops |
-| providers | providers.v1.json | engine(provider_gate) | mind | external network boundary |
-| vault | vault_abi.json + yai_vault_abi.h | kernel | cli + engine | ABI verification |
-| compliance | compliance.context.v1.json | engine | mind | required context |
+## Canonical JSON Contracts
+
+- `cli/commands.v1.json`
+- `cli/commands.schema.json`
+- `compliance/compliance.context.v1.json`
+- `compliance/retention.policy.v1.json`
+- `control/control_plane.v1.json`
+- `control/authority.json`
+- `engine/engine_cortex.v1.json`
+- `graph/graph.v1.json`
+- `providers/providers.v1.json`
+- `vault/vault_abi.json`
+
+## Canonical C Headers
+
+- `protocol/protocol.h`
+- `protocol/transport.h`
+- `protocol/yai_protocol_ids.h`
+- `protocol/errors.h`
+- `protocol/auth.h`
+- `protocol/roles.h`
+- `protocol/session.h`
+- `protocol/audit.h`
+- `protocol/runtime/rpc_runtime.h`
+- `vault/yai_vault_abi.h`
+
+## Test Vectors
+
+- `vectors/transport_vectors.json`
+- `vectors/auth_vectors.json`
+- `vectors/audit_vectors.json`
