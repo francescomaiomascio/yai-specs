@@ -1,58 +1,104 @@
-# YAI Specs
+# YAI Specs — The Canonical Contract Layer
 
-`yai-specs` is the canonical, normative contract repository for YAI.
-It is the single source of truth for protocols, schemas, policy specs, and formal law.
-Consumers MUST pin a specific revision when integrating these specs.
+_YAI = “YAI Ain’t Intelligence”_  
+Specs are where intelligence becomes governable.
 
-Current release baseline: `v0.1.0`.
-Current compatibility identifier: `SPECS_API_VERSION=v1`.
+YAI Specs is the **normative contract repository** for the YAI ecosystem: protocols, schemas, ABI surfaces, policy packs, and formal artifacts that define what the runtime **must** do.
 
-## Normative vs Informative
+This repo is not “documentation.” It is the **source of authority** that every consumer pins, audits, and upgrades deliberately.
 
-Normative artifacts define contracts and are binding:
-- JSON contracts (`*.json`)
-- Protocol/ABI headers (`protocol/*.h`, `vault/yai_vault_abi.h`)
-- Formal law artifacts (`contracts/**`)
-- Compliance policy specs and packs (`compliance/**`)
+---
 
-Informative artifacts explain or guide:
-- Markdown documentation (`*.md`)
-- Runbooks or explanatory notes
+## 1) What this repository is
 
-If there is a conflict, normative artifacts take precedence.
+**YAI Specs** is the single source of truth for:
 
-## Repository Structure
+- **Wire and transport contracts** (envelopes, IDs, routing semantics)
+- **Vault ABI** and low-level invariants
+- **Control-plane schemas** (commands, governance surfaces)
+- **Graph / events / providers schemas**
+- **Formal law artifacts** (axioms, invariants, boundaries, proofs)
+- **Compliance packs** (machine-readable, versioned)
 
-- `compliance/` - machine-readable policy specs and packs
-- `contracts/` - normative law, axioms, invariants, boundaries, formal proofs
-- `protocol/` - wire/ABI headers and protocol IDs
-- `control/` - control-plane schemas
-- `cli/` - CLI command schemas
-- `engine/` - engine contract surface
-- `graph/` - graph schema
-- `providers/` - provider-facing schema
-- `vault/` - vault ABI contract
-- `vectors/` - test vectors for conformance
+If a runtime or client diverges from these specs, **the implementation is wrong**.
 
-## Canonical Indexes
+---
 
-- `SPEC_MAP.md` - authoritative table of contents for all specs
-- `REGISTRY.md` - normative artifact registry and ID allocation rules
-- `VERSIONING.md` - versioning and compatibility policy
-- `COMPATIBILITY.md` - consumer compatibility matrix
-- `CHANGELOG.md` - contract change log
-- `SECURITY.md` - security and disclosure policy
-- API Reference (Doxygen): https://francescomaiomascio.github.io/yai-specs/
+## 2) What this repository is not
 
-## Consumption Model
+- Not a playground for product experiments
+- Not a “best effort” reference
+- Not something you copy/paste downstream
 
-- Treat this repo as a pinned dependency (submodule or snapshot).
-- Upgrades are deliberate and validated against `VERSIONING.md` and `COMPATIBILITY.md`.
-- Do not copy specs into downstream repos; link and pin instead.
+Consumers **pin** a revision and integrate it as a dependency.
+
+---
+
+## 3) Normative vs Informative
+
+**Normative artifacts are binding** (contracts you must implement/validate):
+
+- JSON schemas and contracts (`*.json`)
+- Protocol and ABI headers (`protocol/*.h`, `vault/*.h`)
+- Formal contracts and proofs (`contracts/**`)
+- Compliance packs (`compliance/**`)
+- Test vectors (`vectors/**`)
+
+**Informative artifacts explain the system** (help you interpret the law):
+
+- Markdown guides and notes (`*.md`, where not explicitly marked normative)
+
+If there is a conflict, **normative wins**.
+
+---
+
+## How to use YAI Specs (pinning model)
+
+Treat this repo as a pinned dependency:
+
+- Git submodule (preferred for auditability), or
+- vendored snapshot with a recorded commit hash
+
+Upgrades are deliberate: read `VERSIONING.md`, check `COMPATIBILITY.md`, then validate with your conformance gates.
+
+---
+
+## Repository map
+
+- `protocol/` — protocol headers, transport rules, IDs
+- `vault/` — vault ABI contract
+- `control/` — control-plane schemas
+- `cli/` — CLI command schemas and public interface definition
+- `engine/` — engine contract surface
+- `graph/` — graph schema and rules
+- `providers/` — provider-facing schema
+- `contracts/` — axioms, invariants, boundaries, formal artifacts
+- `compliance/` — policy specs + versioned packs
+- `vectors/` — conformance vectors (audit/auth/transport/etc.)
+- `scripts/` — release/versioning helpers (repo-local)
+
+---
+
+## Canonical indexes
+
+- `SPEC_MAP.md` — authoritative table of contents
+- `REGISTRY.md` — artifact registry + ID allocation rules
+- `VERSIONING.md` — versioning and compatibility policy
+- `COMPATIBILITY.md` — consumer compatibility matrix
+- `CHANGELOG.md` — contract change log
+- `SECURITY.md` — disclosure and security policy
+
+---
+
+## Status
+
+**Series: 0.x (Genesis)**
+
+The contract line is stabilizing toward a V1 surface. Expect disciplined evolution: explicit changelogs, compatibility tracking, and pinned revisions across the ecosystem.
+
+---
 
 ## License
 
-Apache License 2.0 (Apache-2.0).
-The full license text is available in `LICENSE`.
-`NOTICE` is provided in the repository root.
-Third-party notices are listed in `THIRD_PARTY_NOTICES.md`.
+Apache-2.0.  
+See `LICENSE`, `NOTICE`, and `THIRD_PARTY_NOTICES.md`.
