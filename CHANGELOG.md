@@ -10,5 +10,10 @@ This file records notable changes to normative contracts and their documentation
 
 ## Unreleased
 
-- PATCH: Documentation rewrite and canonical index updates.
-- PATCH: Moved compliance packs to `compliance/packs/` and formal state snapshots to `contracts/formal/artifacts/`.
+- No unreleased changes.
+
+## [0.1.0] - 2026-02-17
+
+- MAJOR (API line): `SPECS_API_VERSION` established as `v1` for current canonical contracts.
+- PATCH: Public hardening baseline (licensing, governance, security, registry/index consistency).
+- PATCH: Canonical repository structure stabilized for pinning by `yai` and `yai-cli`.

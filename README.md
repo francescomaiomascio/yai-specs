@@ -4,6 +4,9 @@
 It is the single source of truth for protocols, schemas, policy specs, and formal law.
 Consumers MUST pin a specific revision when integrating these specs.
 
+Current release baseline: `v0.1.0`.
+Current compatibility identifier: `SPECS_API_VERSION=v1`.
+
 ## Normative vs Informative
 
 Normative artifacts define contracts and are binding:
