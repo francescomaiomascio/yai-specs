@@ -1,3 +1,4 @@
+/* SPDX-License-Identifier: Apache-2.0 */
 /* AUTO-GENERATED: vault/vault_abi.json */
 /* Generated: 2026-02-13T21:27:22Z */
 /**

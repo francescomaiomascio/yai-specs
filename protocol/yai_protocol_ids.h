@@ -1,3 +1,4 @@
+/* SPDX-License-Identifier: Apache-2.0 */
 /**
  * @file yai_protocol_ids.h
  * @brief Canonical protocol command classes and IDs.

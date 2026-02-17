@@ -1,3 +1,4 @@
+/* SPDX-License-Identifier: Apache-2.0 */
 /**
  * @file transport.h
  * @brief RPC envelope and transport framing constants.

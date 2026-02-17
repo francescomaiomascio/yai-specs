@@ -1,3 +1,4 @@
+/* SPDX-License-Identifier: Apache-2.0 */
 /**
  * @file auth.h
  * @brief Authentication token schema and claims.
