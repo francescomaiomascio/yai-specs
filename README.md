@@ -49,4 +49,7 @@ If there is a conflict, normative artifacts take precedence.
 
 ## License
 
-This repository is licensed under Apache-2.0. See `LICENSE`.
+Apache License 2.0 (Apache-2.0).
+The full license text is available in `LICENSE`.
+`NOTICE` is provided in the repository root.
+Third-party notices are listed in `THIRD_PARTY_NOTICES.md`.
