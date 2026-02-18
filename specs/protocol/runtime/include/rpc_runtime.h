@@ -5,8 +5,8 @@
 #pragma once
 
 #include <stdbool.h>
-#include <protocol/transport.h>
-#include <protocol/protocol.h>   /* <-- IMPORTANTE */
+#include <transport.h>
+#include <protocol.h>
 
 #ifdef __cplusplus
 extern "C" {
