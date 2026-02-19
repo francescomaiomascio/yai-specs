@@ -1,7 +1,7 @@
 {
   "v": 1,
   "generated_at": "2026-02-19",
-  "repo_version": "0.1.7",
+  "repo_version": "0.1.0",
   "invariants": [
     {
       "id": "I-001-traceability",
