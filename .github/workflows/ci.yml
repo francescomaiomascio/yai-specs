@@ -1,0 +1,31 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  formal-coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dev requirements
+        run: |
+          python3 -m pip install --upgrade pip
+          if [ -f requirements-dev.txt ]; then
+            python3 -m pip install -r requirements-dev.txt
+          elif [ -f requirements-dev.in ]; then
+            python3 -m pip install -r requirements-dev.in
+          fi
+          python3 -m pip install jsonschema
+
+      - name: Formal coverage gate
+        run: make formal-coverage
